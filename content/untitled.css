@@ -1,0 +1,13 @@
+div {
+	width: 280px;
+	height: 280px;
+	background: red;
+	-webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+	animation: stretch 1s ease infinite;
+}
+
+@keyframes stretch {
+	50% {
+	-webkit-clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+	}
+}

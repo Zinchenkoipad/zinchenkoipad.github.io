@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" lang="ua">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Valerii Zinchenko portfolio</title>
+	<style type="text/css">
+		body{
+			background-color: orange;
+		}
+	/*flexStyle*/
+		.flex{
+			background-color: rgba(200,20,500,0.5);
+			opacity: 1;
+			display: flex;
+			margin-top: 10px;
+			margin-left: 200px;
+			overflow: scroll;
+			height: 330px;
+			right: 0px;
+			left: 0px;
+			padding-top: 50px;
+			padding-left: 90px;
+			/*box-shadow:0 0 10px 2px #000;*/
+			border-radius: 10px;
+		}
+		.parent{
+			width: 250px;
+			height: 280px;
+			border-radius: 15px;
+			background-color: rgba(0,0,0,0.1);
+			margin-top:20px;
+			margin-left: -50px;
+			-webkit-transition: margin-top 0.1s,margin-right 0.1s;
+			-moz-transition: margin-top 0.1s,margin-right 0.1s;
+			-o-transition: margin-top 0.1s,margin-right 0.1s;
+			transition: margin-top 0.1s,margin-right 0.1s;
+		}
+		.parent:hover{
+			margin-top: 0px;
+			margin-right: 70px;
+			z-index: 999;
+			cursor: pointer;
+			background-color: rgba(0,0,0,0.7);
+		}
+		.element {
+			width: 250px;
+			height: 200px;
+			border-radius: 10px;
+			background-color: white;
+			position: relative;
+			left: -15px;
+			top:15px;
+			box-shadow:0 0 20px -5px #777;
+			font-family: "Avenir Next";
+			font-weight: bold;
+			font-size: 3em;
+			text-align: center;
+		}
+		.text {
+			position: relative;
+			top: 50px;
+			color:black;
+			opacity: 1;
+			background: rgba(200,20,500,0.8);
+		}	
+	/*scrollbarStyle*/
+		.flex::-webkit-scrollbar {
+ 			width: 0px;
+ 			height: 10px;
+		}
+		.flex::-webkit-scrollbar-corner{
+			display: none;
+		}
+		.flex::-webkit-scrollbar-thumb {
+			background: rgba(205,150,100,0.5);
+			border-radius: 10px;
+		}
+		.flex::-webkit-scrollbar-thumb:hover {
+			background: #b30000;
+		}
+		aside{
+			background-color: rgba(200,20,500,0.5);
+			opacity: 1;
+			height: 100%;
+			width: 190px;
+			left: 0px;
+			top: 0px;
+			position: absolute;
+		}
+		.buttons{
+			z-index: 99;
+			position: absolute;
+			top:0px;
+		}
+		#header{
+			color: rgba(200,20,500,0.5);
+			font-family: "Avenir Next";
+			font-weight: bold;
+			font-size: 1em;
+			top:0px;
+			margin-left: 200px;
+		}
+		#naming{
+			color: rgba(200,20,500,0.5);
+			font-family: "Avenir Next";
+			font-weight: bold;
+			font-size: 2em;
+			top:0px;
+			margin-left: 400px;
+			position: absolute;
+		}
+		a:link{
+			text-decoration: none;
+			color:black;
+		}
+		a:visited{
+			color:black;
+		}
+	</style>
+</head>
+<body id="body">
+	<header id="header">
+		<span id="naming">myPortfolio</span>
+		last Update: 09/01/2019<br>
+		next Update: <span id="dc"></span>
+		
+	</header>
+	<div class="flex">
+		<div class="parent"> 
+			<a href="./content/CV.html" target="_blank">
+			<div class="element"><br>CV</div>
+			</a>
+			<div class="text">This is my CV</div>
+		 </div>
+		<div class="parent"> 
+			<a href="./content/index.html" target="_blank">
+			<div class="element"><br>pBlog</div>
+			</a>
+			<div class="text">My daughter's colection of penguins</div>
+		 </div>
+		<div class="parent">
+			<a href="./content/untitled.html" target="_blank">
+			<div class="element"><br>iCYI p#1</div>
+		</a>
+			<div class="text">Experiment</div>
+		 </div>
+		<div class="parent"> 
+			<div class="element"></div>
+			<div class="text">Will appears soon...</div>
+		 </div>
+		<div class="parent"> 
+			<div class="element"></div>
+			<div class="text">Will appears soon...</div>
+		 </div>
+		 <div class="parent"> 
+			<div class="element"></div>
+			<div class="text">Will appears soon...</div>
+		 </div>
+		 <div class="parent"> 
+			<div class="element"></div>
+			<div class="text">Will appears soon...</div>
+		 </div>
+	</div>
+	<div class="buttons">
+		<button onclick="red()" style="background: rgb(150,50,50);">red</button>
+		<button onclick="orange()" style="background: orange;">orange</button>
+		<button onclick="blue()" style="background: rgb(50,0,155);">blue</button>
+	</div>
+	<aside>
+		
+	</aside>
+<script type="text/javascript">
+	function red(){
+		document.getElementById("body").style.backgroundColor="rgb(150,50,50)";
+	}
+	function orange(){
+		document.getElementById("body").style.backgroundColor="orange";
+	}
+	function blue(){
+		document.getElementById("body").style.backgroundColor="rgb(50,0,155)";
+	}
+</script>
+<script>
+	var countDownDate = new Date("Jan 14, 2019 10:00:00").getTime();
+	var x = setInterval(function() {
+	  var now = new Date().getTime();
+	  var distance = countDownDate - now;
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+	  document.getElementById("dc").innerHTML = days + "d " + hours + "h "
+	  + minutes + "m " + seconds + "s ";
+	  if (distance < 0) {
+	    clearInterval(x);
+	    document.getElementById("dc").innerHTML = "EXPIRED";
+	  }
+	}, 1000);
+</script>
+</body>
+</html>

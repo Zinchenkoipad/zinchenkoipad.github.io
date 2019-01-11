@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logo</title>
+	<style type="text/css">
+		table{
+			text-align: center;
+			font-size:5vh;
+		}
+		td{
+			width: 20%;
+		}
+		#red{
+			background-color: red;
+		}
+		.orange{
+			background-color: orange;
+		}
+		.yellow{
+			background-color: yellow;
+		}
+		.green{
+			background-color: green;
+		}
+		.blue{
+			background-color: blue;
+		}
+		.indigo{
+			background-color: indigo;
+		}
+		.violet{
+			background-color: violet;
+		}
+	</style>
+</head>
+<body>
+	<table cellspacing="1">
+		<tr><td id="red">i</td><td class="orange">C</td><td class="yellow">o</td><td class="green">d</td><td class="blue">e</td></tr>
+		<tr><td></td><td class="yellow">Y</td><td class="green">o</td><td class="blue">u</td><td class="indigo">r</td></tr>
+		<tr><td></td><td class="green">I</td><td class="blue">d</td><td class="indigo">e</td><td class="violet">a</td></tr>
+	</table>
+
+<script>
+	
+	function changeColor() {
+			var x = document.getElementById("red");
+			setTimeout(function(){ x.style.backgroundColor = "orange" },750);
+			setTimeout(function(){ x.style.backgroundColor = "yellow" },1500);
+			setTimeout(function(){ x.style.backgroundColor = "green" },2250);
+			setTimeout(function(){ x.style.backgroundColor = "blue" },3000);
+			setTimeout(function(){ x.style.backgroundColor = "indigo" },3750);
+			setTimeout(function(){ x.style.backgroundColor = "violet" },4500);
+			setTimeout(function(){ x.style.backgroundColor = "red" },5250);
+			}
+		changeColor();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

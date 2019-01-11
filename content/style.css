@@ -24,10 +24,11 @@ header {
 
 img {
 	/*width: 100%;
-	max-width: 50%;
-	min-width: 50%;*/
-	width: 400px;
-	height: 300px;
+	max-width: 30vw;
+	min-width: 20vw;*/
+	max-width: 300px;
+	max-height: 225px;
+	
 	margin: 5px;
 	transition: all 1s;
 	z-index: 1020;
@@ -40,11 +41,9 @@ img:hover {
 
 h1 {
 	font-family: fantasy;
-	font-size: 3em;
+	font-size: 3vw;
 	color:white;
 	border-bottom: 10px solid rgba(0, 0, 0, 0.5);
-	border-left: 200px solid rgba(0, 0, 0, 0.5);
-	border-right: 200px solid rgba(0, 0, 0, 0.5);
 	-moz-background-clip: padding-box; 
 	-webkit-background-clip: padding-box; 
 	background-clip: padding-box; 

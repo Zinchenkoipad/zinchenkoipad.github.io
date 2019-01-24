@@ -149,11 +149,11 @@
 		<script>
 			
 			function resetBtn(){
-			document.getElementById("header").innerHTML = "Стоимость поездки";
+			document.getElementById("header").innerHTML = "Стоимость поез))дки";
 			}
 			
 			function tripPrice(){
-			let trip = ""
+			let trip;
 			/*let a = document.getElementById("length");
 			let i = a.selectedIndex;
 			let length = a.options[i].text;*/
@@ -164,7 +164,7 @@
 				if (Number(length)<=20){
 					trip = Number(duration) * 0.25 + Number(length) * 1.3 * kof + 4;
 				}else{
-			    trip = Number(duration) * 0.25 + 20 * 1.3 * kof + (Number(length) - 20) * 3.3 + 4
+			    trip = Number(duration) * 0.25 + 20 * 1.3 * kof + (Number(length) - 20) * 3.3 + 4;
 				}
 			if (trip<=4){
 			    trip = "кидалово " + 0;

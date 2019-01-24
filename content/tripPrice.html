@@ -147,7 +147,9 @@
 		</form>
 		<script>
 			
-			
+			function resetBtn(){
+			document.getElementById("header").innerHTML = "Стоимость поездки";
+			}
 			
 			function tripPrice(){
 			let trip = ""
@@ -171,9 +173,7 @@
 			document.getElementById("header").innerHTML = trip + " pln";
 			}
 			
-			function resetBtn(){
-			document.getElementById("header").innerHTML = "Стоимость поездки";
-			}
+			
 			
 			
 		

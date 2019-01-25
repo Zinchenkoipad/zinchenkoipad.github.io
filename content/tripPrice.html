@@ -37,15 +37,11 @@
 		width: 46vw;
 		font-size: 7vw;
 		margin: auto;
-		background: linear-gradient(to right, #ff0055, #ff7e01, #00fe56, #0266F3);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
 }
 		</style>
 	</head>
 	<body>
 	<h1>Стоимость поездки</h1>
-	<h1 id="header"></h1>
 	<form>
 			<fieldset style="width:fit-content;margin:auto;">
 			<legend><div>Расстояние, км:</div></legend>
@@ -144,14 +140,14 @@
 			</select>
 			</fieldset><br>
 			<footer style="margin:2vw;">
-				<button class="btn" onclick="tripPrice()">Посчитать</button>
+				<button class="btn" onclick="tripPrice()" id="header">Посчитать</button>
 				<button class="btn" onclick="resetBtn()">Обнулить</button>
 			</footer>
 		</form>
 		<script>
 			
 			function resetBtn(){
-			document.getElementById("header").innerHTML = "Стоимость поездки";
+			document.getElementById("header").innerHTML = "Посчитать";
 			document.getElementById("length").value=0
 			document.getElementById("duration").value=0
 			document.getElementById("kof").value=0
@@ -176,7 +172,7 @@
 			} else if (trip<10 && trip>4){
 			    trip = 10;
 			} /*else{alert("чет за хуйня")}*/
-			document.getElementById("header").innerHTML= "Стоимость поездки " + trip + " pln";
+			document.getElementById("header").innerHTML= "Итого " + trip + " pln";
 			}
 			
 			

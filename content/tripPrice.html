@@ -35,9 +35,11 @@
 
 	.btn{
 		width: 46vw;
-		font-colour: green;
 		font-size: 7vw;
 		margin: auto;
+		background: linear-gradient(to right, #ff0055, #ff7e01, #00fe56, #0266F3);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 }
 		</style>
 	</head>
@@ -142,15 +144,18 @@
 			</select>
 			</fieldset><br>
 			<footer style="margin:2vw;">
-			<input type="submit" value="Посчитать" class="btn" onclick="tripPrice()">
-			<input type="reset" value="Обнулить" class="btn" onclick="resetBtn()">
+				<button class="btn" onclick="tripPrice()">Посчитать</button>
+				<button class="btn" onclick="resetBtn()">Обнулить</button>
 			</footer>
 		</form>
 		<script>
 			
-			/*function resetBtn(){
+			function resetBtn(){
 			document.getElementById("header").innerHTML = "Стоимость поездки";
-			}*/
+			document.getElementById("length").value=0
+			document.getElementById("duration").value=0
+			document.getElementById("kof").value=0
+			}
 			
 			function tripPrice(){
 			let trip;
@@ -171,7 +176,7 @@
 			} else if (trip<10 && trip>4){
 			    trip = 10;
 			} /*else{alert("чет за хуйня")}*/
-			alert ("Стоимость поездки " + trip + " pln");
+			document.getElementById("header").innerHTML= "Стоимость поездки " + trip + " pln";
 			}
 			
 			

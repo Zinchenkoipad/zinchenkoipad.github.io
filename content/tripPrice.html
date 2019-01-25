@@ -153,7 +153,7 @@
 			document.getElementById("kof").value=0
 			}
 			
-			function tripPrice(){
+			function tP(){
 			let trip;
 			/*let a = document.getElementById("length");
 			let i = a.selectedIndex;
@@ -172,8 +172,11 @@
 			} else if (trip<10 && trip>4){
 			    trip = 10;
 			} /*else{alert("чет за хуйня")}*/
-			document.getElementById("header").innerHTML= "Итого " + trip + " pln";
+			return "Итого " + trip + " pln";
 			}
+			
+			function tripPrice(){
+				document.getElementById("header").innerHTML= tP();}
 			
 			
 			

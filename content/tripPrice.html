@@ -41,7 +41,7 @@
 		</style>
 	</head>
 	<body>
-	<h1>Стоимость поездки</h1>
+	<h1 id="header">Стоимость поездки</h1>
 	<form>
 			<fieldset style="width:fit-content;margin:auto;">
 			<legend><div>Расстояние, км:</div></legend>
@@ -140,14 +140,14 @@
 			</select>
 			</fieldset><br>
 			<footer style="margin:2vw;">
-				<button type="button" class="btn" onclick="tripPrice()" id="header">Посчитать</button>
+				<button type="button" class="btn" onclick="tripPrice()">Посчитать</button>
 				<button type="button" class="btn" onclick="resetBtn()">Обнулить</button>
 			</footer>
 		</form>
 		<script>
 			
 			function resetBtn(){
-			document.getElementById("header").innerHTML = "Посчиать";
+			document.getElementById("header").innerHTML = "Стоимость поездки";
 			document.getElementById("length").value=0
 			document.getElementById("duration").value=0
 			document.getElementById("kof").value=0
@@ -172,7 +172,7 @@
 			} else if (trip<10 && trip>4){
 			    trip = 10;
 			} /*else{alert("чет за хуйня")}*/
-			return "Итого " + trip + " pln";
+			return trip + " pln";
 			}
 			
 			function tripPrice(){

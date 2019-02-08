@@ -33,7 +33,7 @@
 		}
 	</style>
 </head>
-<body>
+<body id="o">
 	<table cellspacing="1">
 		<tr><td id="red">i</td><td class="orange">C</td><td class="yellow">o</td><td class="green">d</td><td class="blue">e</td></tr>
 		<tr><td></td><td class="yellow">Y</td><td class="green">o</td><td class="blue">u</td><td class="indigo">r</td></tr>
@@ -52,7 +52,7 @@
 			setTimeout(function(){ x.style.backgroundColor = "violet" },4500);
 			setTimeout(function(){ x.style.backgroundColor = "red" },5250);
 			}
-		changeColor();
+		document.getElementById("o").addEventListener("mousemove",changeColor);
 </script>
 </body>
 </html>

@@ -5,118 +5,153 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Valerii Zinchenko portfolio</title>
 	<style type="text/css">
-		body{
-			background-color: orange;
+		body
+		{
+		    background-color: orange;
 		}
-	/*flexStyle*/
-		.flex{
-			background-color: rgba(200,20,500,0.5);
-			opacity: 1;
-			display: flex;
-			margin-top: 10px;
-			margin-left: 200px;
-			overflow: scroll;
-			height: 330px;
-			right: 0px;
-			left: 0px;
-			padding-top: 50px;
-			padding-left: 90px;
-			/*box-shadow:0 0 10px 2px #000;*/
-			border-radius: 10px;
+		/*flexStyle*/
+		.flex
+		{
+		    right: 0;
+		    left: 0;
+
+		    display: flex;
+		    overflow: scroll;
+
+		    height: 330px;
+		    margin-top: 10px;
+		    margin-left: 200px;
+		    padding-top: 50px;
+		    padding-left: 90px;
+
+		    opacity: 1;
+		    /*box-shadow:0 0 10px 2px #000;*/
+		    border-radius: 10px;
+		    background-color: rgba(200,20,500,.5);
 		}
-		.parent{
-			width: 250px;
-			height: 280px;
-			border-radius: 15px;
-			background-color: rgba(0,0,0,0.1);
-			margin-top:20px;
-			margin-left: -50px;
-			-webkit-transition: margin-top 0.1s,margin-right 0.1s;
-			-moz-transition: margin-top 0.1s,margin-right 0.1s;
-			-o-transition: margin-top 0.1s,margin-right 0.1s;
-			transition: margin-top 0.1s,margin-right 0.1s;
+		.parent
+		{
+		    width: 250px;
+		    height: 280px;
+		    margin-top: 20px;
+		    margin-left: -50px;
+		    transition: margin-top .1s,margin-right .1s;
+
+		    border-radius: 15px;
+		    background-color: rgba(0,0,0,.1);
 		}
-		.parent:hover{
-			margin-top: 0px;
-			margin-right: 70px;
-			z-index: 999;
-			cursor: pointer;
-			background-color: rgba(0,0,0,0.7);
+		.parent:hover
+		{
+		    z-index: 999;
+
+		    margin-top: 0;
+		    margin-right: 70px;
+
+		    cursor: pointer;
+
+		    background-color: rgba(0,0,0,.7);
 		}
-		.element {
-			width: 250px;
-			height: 200px;
-			border-radius: 10px;
-			background-color: white;
-			position: relative;
-			left: -15px;
-			top:15px;
-			box-shadow:0 0 20px -5px #777;
-			font-family: "Avenir Next";
-			font-weight: bold;
-			font-size: 3em;
-			text-align: center;
+		.element
+		{
+		    font-family: 'Avenir Next';
+		    font-size: 3em;
+		    font-weight: bold;
+
+		    position: relative;
+		    top: 15px;
+		    left: -15px;
+
+		    width: 250px;
+		    height: 200px;
+
+		    text-align: center;
+
+		    border-radius: 10px;
+		    background-color: white;
+		    box-shadow: 0 0 20px -5px #777;
 		}
-		.text {
-			position: relative;
-			top: 50px;
-			color:black;
-			opacity: 1;
-			background: rgba(200,20,500,0.8);
-		}	
-	/*scrollbarStyle*/
-		.flex::-webkit-scrollbar {
- 			width: 0px;
- 			height: 10px;
+		.text
+		{
+		    position: relative;
+		    top: 50px;
+
+		    opacity: 1;
+		    color: black;
+		    background: rgba(200,20,500,.8);
 		}
-		.flex::-webkit-scrollbar-corner{
-			display: none;
+		/*scrollbarStyle*/
+		.flex::-webkit-scrollbar
+		{
+		    width: 0;
+		    height: 10px;
 		}
-		.flex::-webkit-scrollbar-thumb {
-			background: rgba(205,150,100,0.5);
-			border-radius: 10px;
+		.flex::-webkit-scrollbar-corner
+		{
+		    display: none;
 		}
-		.flex::-webkit-scrollbar-thumb:hover {
-			background: #b30000;
+		.flex::-webkit-scrollbar-thumb
+		{
+		    border-radius: 10px;
+		    background: rgba(205,150,100,.5);
 		}
-		aside{
-			background-color: rgba(200,20,500,0.5);
-			opacity: 1;
-			height: 100%;
-			width: 190px;
-			left: 0px;
-			top: 0px;
-			position: absolute;
+		.flex::-webkit-scrollbar-thumb:hover
+		{
+		    background: #b30000;
 		}
-		.buttons{
-			z-index: 99;
-			position: absolute;
-			top:0px;
+		aside
+		{
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+
+		    width: 190px;
+		    height: 100%;
+
+		    opacity: 1;
+		    background-color: rgba(200,20,500,.5);
 		}
-		#header{
-			color: rgba(200,20,500,0.5);
-			font-family: "Avenir Next";
-			font-weight: bold;
-			font-size: 1em;
-			top:0px;
-			margin-left: 200px;
+		.buttons
+		{
+		    position: absolute;
+		    z-index: 99;
+		    top: 0;
 		}
-		#naming{
-			color: rgba(200,20,500,0.5);
-			font-family: "Avenir Next";
-			font-weight: bold;
-			font-size: 2em;
-			top:0px;
-			margin-left: 400px;
-			position: absolute;
+		#header
+		{
+		    font-family: 'Avenir Next';
+		    font-size: 1em;
+		    font-weight: bold;
+
+		    top: 0;
+
+		    margin-left: 200px;
+
+		    color: rgba(200,20,500,.5);
 		}
-		a:link{
-			text-decoration: none;
-			color:black;
+		#naming
+		{
+		    font-family: 'Avenir Next';
+		    font-size: 2em;
+		    font-weight: bold;
+
+		    position: absolute;
+		    top: 0;
+
+		    margin-left: 400px;
+
+		    color: rgba(200,20,500,.5);
 		}
-		a:visited{
-			color:black;
+		a:link
+		{
+		    text-decoration: none;
+
+		    color: black;
 		}
+		a:visited
+		{
+		    color: black;
+		}
+
 	</style>
 </head>
 <body id="body">

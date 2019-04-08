@@ -41,7 +41,6 @@
 		margin: auto;
 }
 		</style>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136768876-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -55,6 +54,7 @@
 	<body>
 	<h1 id="header">Стоимость поездки</h1>
 	<form>
+
 			<fieldset style="width:fit-content;margin:auto;">
 			<legend><div>Расстояние, км:</div></legend>
 			<input type="number" id="length">
@@ -69,10 +69,12 @@
 			<legend><div>Коэфициент:</div></legend>
 			<input type="number" id="kof" value="1">
 			</fieldset><br>
+
 			<footer style="margin:2vw;">
 				<button type="button" class="btn" onclick="tripPrice()">Посчитать</button>
 				<button type="button" class="btn" onclick="resetBtn()">Обнулить</button>
 			</footer>
+
 		</form>
 		<script>
 			
@@ -85,33 +87,25 @@
 			
 			function tP(){
 			let trip;
-			/*let a = document.getElementById("length");
-			let i = a.selectedIndex;
-			let length = a.options[i].text;*/
 			let length = document.getElementById("length").value;
 			let duration = document.getElementById("duration").value;
 			let kof = document.getElementById("kof").value;
 			
 				if (Number(length)<=20){
 					trip = Number(duration) * 0.25 + Number(length) * 1.3 * kof + 4;
-				}else{
-			    trip = Number(duration) * 0.25 + 20 * 1.3 * kof + (Number(length) - 20) * 3.3 + 4;
-				}
-			if (trip<=4){
-			    trip = 0;
-			} else if (trip<10 && trip>4){
-			    trip = 10;
-			} /*else{alert("чет за хуйня")}*/
-			return trip.toFixed(2) + " pln";
-			}
+					}else{
+				    	trip = Number(duration) * 0.25 + 20 * 1.3 * kof + (Number(length) - 20) * 3.3 + 4;
+					}
+						if (trip<=4){
+						    trip = 0;
+							} else if (trip<10 && trip>4){
+						  	  trip = 10;
+							} 
+						return trip.toFixed(2) + " pln";
+						}
 			
 			function tripPrice(){
 				document.getElementById("header").innerHTML= tP();}
-			
-			
-			
-			
-		
 		
 		</script>
 	</body>

@@ -1,29 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<title>Valerii Zinchenko CV</title>
 	<meta charset="utf-8" lang="ua" lang="en" lang="pl">
 	<style>
-		#y,#r,#b{height: 15px;width: 15px;background-color: #FAC600;margin-right: 1px;}
-		 #r{background-color: red;}
-		 #b{background-color: #6793F8;}
-		div{display: inline-block;position: relative;left: 150px;}
-		body {font-family: "Avenir Next";}
-		section{position: fixed;top: 5px;left: 2px;}
-		th,td,button{cursor:pointer;vertical-align: baseline;}
-		#t {
+		body {
+			font-family: "Avenir Next";
+		}
+		.flexspace{
+			display: flex;
+			justify-content: space-between;
+			width: 400px;
+			margin-bottom: 30px;
+		}
+		.flexCenter{
+			display: flex;
+			justify-content: center;
+		}
+		.selected{
+			top: 10px;
+			position: relative;
+			font-weight: bold;
+			border-color: red;
+		}
+		.square{
+			height: 15px;
+			width: 15px;
+			margin-right: 5px;
+		}
+		.y{
+			background-color: #FAC600;
+		}
+		.r{
+		 	background-color: red;
+		 }
+		.b{
+		 	background-color: #6793F8;
+		}
+		#name{
+			padding-left: 20px;
+		}
+		button{
+			cursor: pointer;
+			border-radius: 3px;
+			width: 30px;
+			margin-right: 5px;
+			background-color:white;
+			border:1px solid black;
+		}
+		.blockHeader {
 			font-weight: normal;
 			font-size: 1.2em;
-			padding-top: 20px;
-			padding-bottom: 20px;
+			padding-top: 15px;
+			padding-bottom: 15px;
 			text-transform: none;
 		}
-		#f{
+		.nameTop{
 			font-size: 1.3em;
 			color: #505050;
 			font-weight: 600;
 		}
-		th {
+		th{
 			text-align: right;
 			padding-right: 30px;
 			text-transform: uppercase;
@@ -31,389 +70,292 @@
 			font-weight: bold;
 			color: #505050;
 			width: 250px;
+			vertical-align: middle;
 		}
-		#h{
-			height: 10px;
-		}
-		}
-		td {text-align: left;}
 		a:hover{
 			font-weight: bold;
 			text-transform: uppercase;
 		}
-		#bEN{top:10px;position: relative;font-weight: bold;border-color: red;border-radius: 3px;}
+		.emptyCell{
+			height: 5px;
+		}
+		img{
+			width: 200px;
+			position: relative;
+   			left: -21px;
+		}
+		#photoContainer{
+			position: absolute;
+			top: 138px;
+			left: initial;
+			right: 70px;
+			width: 159px;
+			height: 200px;
+			overflow: hidden;
+		}
+		hr{
+			width: 70%;
+		}
+		#inner{
+			min-width: 800px;
+			max-width: 1000px;
+			position: relative;
+		}
+		ul{
+			margin-block-start: 0;
+   	 		margin-block-end: 0;
+		}
 	</style>
 </head>
 <body>
-	<div id="y"></div>
-	<div id="r"></div>
-	<div id="b"></div>
-	<div id="m">Valerii Zinchenko CV</div><br><br><br><br>
-	<!--<table id="table">
-		<tr><th id="t">Особисті дані</th><td></td></tr>
+	<div id="inner">
+		<header class="flexspace">
+			<div class="flexCenter">
+				<button onclick="changeLang(EN,'Valerii Zinchenko СV')">En</button>
+				<button onclick="changeLang(PL,'Valerii Zinchenko СV')">Pl</button>
+				<button onclick="changeLang(UA,'Валерій Зінченко СV')">Ua</button>
+			</div>
+			<div class="flexCenter">
+				<div class="y square"></div>
+				<div class="r square"></div>
+				<div class="b square"></div>
+				<div id="name">Valerii Zinchenko CV</div>
+			</div>
+		</header>
 
-			<tr><th>Ім'я/Прізвище</th><td id="f">Валерій Зінченко</td></tr>
-
-			<tr><th>Адреса</th><td>вул. Новодворська 27a/303, Варшава 03-133</td></tr>
-			
-			<tr><th>телефон</th><td>+48 576-938-657</td></tr>
-			
-			<tr><th>e-mail</th><td>Zinchenko.valeriy@icloud.com</td></tr>
-			
-					<tr><th id="h"></th><td></td></tr>
-
-			<tr><th>Громадянство</th><td>Україна</td></tr>
-			
-			<tr><th>Дата народження</th><td>31.07.1989</td></tr>
-
-					<tr><th id="h"></th><td></td></tr>
-			
-			<tr><th>Бажана позиція</th><td>Junior front-end developer</td></tr>
-
-			<tr><th>Портфоліо</th><td><a href="https://zinchenkoipad.github.io">github.io</a></td></tr>
-			
-		<tr><th id="t">Досвід роботи</th><td></td></tr>
+		<!-- <div id="photoContainer"><img src="Valerii Zinchenko копія 2.jpg" alt="my photo"></div> -->
+		<div id="content"></div>
 		
-			<tr><th>Дата</th><td>07/2013 - 03/2018</td></tr>
-			
-			<tr><th>Позиція</th><td>Власна діяльність</td></tr>
-			
-			<tr><th>Обов'язки</th><td>Створення контенту та проектування сайтів RWD, конфігурація Wordpress, налаштування CSS / JavaScript анімації. Розробка корпоративного дизайну компаній </td></tr>
+		<script type="text/javascript">
+			var UA ="\
+			<table id=\"table\">\
+				<tr><th id=\"t\">Мої дані</th><td></td></tr>\
+				<tr><th>Ім'я/Прізвище</th><td id=\"f\">Валерій Зінченко</td></tr>\
+					<tr><th>Адреса</th><td>вул. Новодворська, Варшава 03-133</td></tr>\
+					<tr><th>телефон</th><td>+48 576-938-657</td></tr>\
+					<tr><th>e-mail</th><td>Zinchenko.valeriy@icloud.com</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Громадянство</th><td>Україна</td></tr>\
+					<tr><th>Дата народження</th><td>31.07.1989</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Бажана позиція</th><td>Junior front-end developer</td></tr>\
+					<tr><th>Портфоліо</th><td><a href=\"https://zinchenkoipad.github.io\">github.io</a></td></tr>\
+				<tr><th id=\"t\">Досвід роботи</th><td></td></tr>\
+					<tr><th>Дата</th><td>07/2013 - 03/2018</td></tr>\
+					<tr><th>Позиція</th><td>Власна діяльність</td></tr>\
+					<tr><th>Обов'язки</th><td>Створення контенту та проектування сайтів RWD, конфігурація Wordpress, налаштування CSS / JavaScript анімації. Розробка корпоративного дизайну компаній </td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Дата</th><td>09/2008 - 03/2015</td></tr>\
+					<tr><th>Позиція</th><td>Помічник адвоката</td></tr>\
+					<tr><th>Обов'язки</th><td>Редагування, правка, написання документів, статей. Адміністрування сайтом</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Дата</th><td>11/2006 - 09/2008</td></tr>\
+					<tr><th>Позиція</th><td>Copywriter</td></tr>\
+					<tr><th>Обов\'язки</th><td>Переведення текстів в електронний вигляд (Acrobat Reader). Редагування, правка текстів</td></tr>\
+				<tr><th id=\"t\">Освіта і навчання</th><td></td></tr>\
+					<tr><th>Дата</th><td>09/2018 - </td></tr>\
+					<tr><th>Кваліфікація</th><td>Junior Full Stack developer</td></tr>\
+					<tr><th>Основні науки</th><td> jQuerry/Angular.js/React.js/Vue.js, LESS/SASS, Node.js/Express.js, Databases</td></tr>\
+					<tr><th>Установа</th><td>W3School, SoloLearn, Enki, freeCodeCamp, Cisco</td></tr>\
+						<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Дата</th><td>02/2018 - 02/2020</td></tr>\
+					<tr><th>Кваліфікація</th><td>Інформатик</td></tr>\
+					<tr><th>Основні науки</th><td>Проектування та розбудова мереж. Проектування та розбудова комп'ютерних станцій. Операційні системи. Сайти та інтернет-аплікації. Курси Cisco</td></tr>\
+					<tr><th>Установа</th><td>Cosinus</td></tr>\
+						<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Дата</th><td>09/2006 - 01/2012</td></tr>\
+					<tr><th>Кваліфікація</th><td>Юрист</td></tr>\
+					<tr><th>Основні науки</th><td>Правознавство</td></tr>\
+					<tr><th>Установа</th><td>Київський міжнародний університет</td></tr>\
+				<tr><th id=\"t\">Навички і вправність</th><td></td></tr>\
+					<tr><th>Володіння мовами</th><td>Українська - рідна</td></tr>\
+						<tr><th></th><td>Російська - розмовна</td></tr>\
+						<tr><th></th><td>Англійська - розмовна</td></tr>\
+						<tr><th></th><td>Польська - середній</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Комп'ютерні наввички і вправність</th><td>HTML / CSS / JavaScript<br>Photoshop, Bootstrap, Web Fonts, Cross-Browsing, CMS, GIT, Responsive UI of web pages</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Додаткова інформація</th><td>Водійське посвідчення кат \"B\"</td></tr>\
+						<tr><th></th><td>Одружений</td></tr>\
+						<tr><th></th><td>Діти</td></tr>\
+			</table>"; 
 
-					<tr><th id="h"></th><td></td></tr>
+			var EN="\
+			<table id=\"table\">\
+				<tr><th class=\"blockHeader\">About me</th><td></td></tr>\
+				\
+				<tr><th>First name/Last Name</th><td class=\"nameTop\">Valerii Zinchenko</td></tr>\
+					<tr><th>Address</th><td>Nowodworska str, Warsaw 03-133</td></tr>\
+					<tr><th>telefone</th><td>+48 576-938-657</td></tr>\
+					<tr><th>e-mail</th><td>Zinchenko.valeriy@icloud.com</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Nationality</th><td>Ukraine</td></tr>\
+					<tr><th>Date of Birth</th><td>31.07.1989</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Вesired job position</th><td>Junior front-end developer</td></tr>\
+					<tr><th>Portfolio</th><td>\
+						<a href=\"https://icodeyouridea.com/portfolio/anilove/index.html\">RWD site</a>,\
+						<a href=\"https://icodeyouridea.com\">React.js</a>\
+						<a href=\"https://codepen.io/Zichenko_Valerii/pen/dybOzKz\">jQuery</a>\
+						<a href=\"https://github.com/Zinchenkoipad/portfolio\">GitHub</a>\
+						<a href=\"https://www.linkedin.com/in/valerii-zinchenko-034a9217b/\">LinkedIn</a>\
+					</td></tr>\
+						<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Application</th><td>web apps and sites</td></tr>\
+					<tr><th>Languages</th><td>HTML5 - CSS3 - JavaScript - PHP - MySQL - Ruby - Python</td></tr>\
+					<tr><th>Libraries</th><td>React.js - Vue.js - Ruby on Rails - Bootstrap - jQuery - Tachyons </td></tr>\
+					<tr><th>Technologies</th><td>Agile - algorithms and data structures - responsive UI of web apps - cross-browser web apps</td></tr>\
+					<tr><th>Software</th><td>Photoshop - WordPress - Web Fonts - CMS - GIT - Sublime text - <br>Web engines (Apache, nginx, IIS) - Windows - MacOS - Linux</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					\
+				<tr><th class=\"blockHeader\">Project I am proud of</th><td></td></tr>\
+					<tr><th>Date</th><td>05/2019 - 09/2019</td></tr>\
+					<tr><th>Based on</th><td>jQuery, PHP, MySQL, CSS3, HTML5</td></tr>\
+					<tr><th>For</th><td>Application was developed for private translation agency</td></tr>\
+					<tr><th>Resolved problems</th><td>\
+						<ul>\
+							<li>storing agents, notaries, translators and translations cards;</li>\
+							<li>adding and aditing template translations;</li>\
+							<li>separate accounts for managers;</li>\
+							<li>financial statements and corporate reports;</li>\
+							<li>deferred payments and debts monitoring;</li>\
+							<li>100% ability to work without MS Office</li>\
+						</ul>\
+					</td>\
+				</tr>\
+					\
+				<tr><th class=\"blockHeader\">Experience</th><td></td></tr>\
+					<tr><th>Date</th><td>07/2013 - ...</td></tr>\
+					<tr><th>Position</th><td>Freelancer</td></tr>\
+					<tr><th>Duties</th><td>RWD sites content and design development, Wordpress configuration, customizing CSS / JavaScript animations. Corporate design development</td></tr>\
+				  <tr><td colspan=\"2\"><hr></td></tr>\
+				</table>\
+								<div style='overflow:hidden;page-break-before:always;'></div>\
+				<table style='margin-top:50px'>\
+				\
+				<tr><th class=\"blockHeader\">Shop on React</th><td></td></tr>\
+					<tr><th>Date</th><td>01/2017 - 07/2018</td></tr>\
+					<tr><th>Based on</th><td>PHP, MySQL, Bootstrap, React.js, JSX</td></tr>\
+					<tr><th>For</th><td>Application was developed for handmade cosmetic manufacture</td></tr>\
+					<tr><th>Resolved problems</th><td>\
+						<ul>\
+							<li>fast and performanced web application;</li>\
+							<li>ability to add goods, posts and maintain the orders;</li>\
+							<li>online payments for orders;</li>\
+							<li>ability to choose delivery company</li>\
+						</ul>\
+					</td>\
+				</tr>\
+					\
+				  <tr><td colspan=\"2\"><hr></td></tr>\
+				  \
+				<tr><th class=\"blockHeader\">Shop on PHP</th><td></td></tr>\
+					<tr><th>Date</th><td>06/2016 - 07/2017</td></tr>\
+					<tr><th>Based on</th><td>PHP, MySQL, CSS, HTML, jQuery</td></tr>\
+					<tr><th>For</th><td>Application was developed for handmade cosmetic manufacture</td></tr>\
+					<tr><th>Resolved problems</th><td>\
+						<ul>\
+							<li>ability to order special labeled product;</li>\
+							<li>financial statements, orders maintaining reports;</li>\
+							<li>online payments for orders</li>\
+						</ul>\
+					</td>\
+				</tr>\
+					\
+			</table>\
+			<table><tr><th class=\"blockHeader\">Education and training</th><td></td></tr>\
+					<tr><th>Date</th><td>09/2018 - </td></tr>\
+					<tr><th>Qualification</th><td>Junior Full Stack developer</td></tr>\
+					<tr><th>Specialty</th><td>Angular.js, LESS/SASS, Node.js/Express.js, Python, Redux</td></tr>\
+					<tr><th>Organization</th><td>Self-study (w3school, SoloLearn, Enki, freeCodeCamp, Cisco, StackOverFlow, books)</td></tr>\
+				  <tr><td colspan=\"2\"><hr></td></tr>\
+					<tr><th>Date</th><td>02/2018 - 12/2019</td></tr>\
+					<tr><th>Qualification</th><td>Computer specialis</td></tr>\
+					<tr><th>Specialty</th><td>Networks project and development. Computer stations design development. Operating Systems. Internet applications. Cisco Courses</td></tr>\
+					<tr><th>Organization</th><td>Cosinus</td></tr>\
+				    <tr><td colspan=\"2\"><hr></td></tr>\
+					<tr><th>Date</th><td>09/2006 - 01/2012</td></tr>\
+					<tr><th>Qualification</th><td>Lawyer</td></tr>\
+					<tr><th>Specialty</th><td>Jurisprudence</td></tr>\
+					<tr><th>Organization</th><td>Kyiv international university</td></tr>\
+					\
+				<tr><th class=\"blockHeader\">Additional</th><td></td></tr>\
+					<tr><th>Languages</th><td>Ukraine - native</td></tr>\
+					<tr><th></th><td>Russian - native</td></tr>\
+					<tr><th></th><td>English - speaking</td></tr>\
+					<tr><th></th><td>Polish - medium</td></tr>\
+				  <tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Additional Information</th><td>driver's license cat. \"B\"</td></tr>\
+						<tr><th></th><td>Married</td></tr>\
+						<tr><th></th><td>Childrens</td></tr>\
+						<tr><th></th><td><b><i>Stress resistance and perfect time managment skills, as evidence: three daughters and freelance self-employment work :)</i></b></td></tr>\
+			</table>";
 
-			<tr><th>Дата</th><td>09/2008 - 03/2015</td></tr>
-			
-			<tr><th>Позиція</th><td>Помічник адвоката</td></tr>
-			
-			<tr><th>Обов'язки</th><td>Редагування, правка, написання документів, статей. Адміністрування сайтом</td></tr>
+			var PL="\
+			<table id=\"table\">\
+				<tr><th id=\"t\">O mnie</th><td></td></tr>\
+				<tr><th>Imię/Nazwisko</th><td id=\"f\">Valerii Zinchenko</td></tr>\
+					<tr><th>Adres</th><td>Nowodworska str, Warsaw 03-133</td></tr>\
+					<tr><th>telefon</th><td>+48 576-938-657</td></tr>\
+					<tr><th>e-mail</th><td>Zinchenko.valeriy@icloud.com</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Narodowość</th><td>Ukraina</td></tr>\
+					<tr><th>Data urodzenia</th><td>31.07.1989</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Pożądana pozycja pracy</th><td>Junior front-end developer</td></tr>\
+					<tr><th>Teczka</th><td><a href=\"https://zinchenkoipad.github.io\">github.io</a></td></tr>\
+				<tr><th id=\"t\">Doświadczenie zawodowe</th><td></td></tr>\
+					<tr><th>Data</th><td>07/2013 - 03/2018</td></tr>\
+					<tr><th>Stanowisko</th><td>Freelancer</td></tr>\
+					<tr><th>Obowiązki</th><td>Tworzenie i projektowanie stron internetowych RWD, konfiguracja Wordpressa, dostosowywanie animacji CSS / JavaScript. Corporate design development</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Data</th><td>09/2008 - 03/2015</td></tr>\
+					<tr><th>Stanowisko</th><td>Asystent prawnika</td></tr>\
+					<tr><th>Obowiązki</th><td>Dokumenty, artykuły do pisania. Administracja witryny</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Data</th><td>11/2006 - 09/2008</td></tr>\
+					<tr><th>Stanowisko</th><td>Copywriter</td></tr>\
+					<tr><th>Obowiązki</th><td>Transkrypcja tekstu w formie elektronicznej (Acrobat Reader). Edycja i redakcja tekstów</td></tr>\
+				<tr><th id=\"t\">Wykształcenie</th><td></td></tr>\
+					<tr><th>Data</th><td>09/2018 - </td></tr>\
+					<tr><th>Kwalifikacja</th><td>Junior Full Stack developer</td></tr>\
+					<tr><th>kierunek</th><td> jQuerry/Angular.js/React.js/Vue.js, LESS/SASS, Node.js/Express.js, Databases</td></tr>\
+					<tr><th>Organizacja</th><td>W3School, SoloLearn, Enki, freeCodeCamp, Cisco</td></tr>\
+						<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Data</th><td>02/2018 - 02/2020</td></tr>\
+					<tr><th>Kwalifikacja</th><td>Informatyk</td></tr>\
+					<tr><th>kierunek</th><td>Projektowanie i montaż lokalnych sieci komputerowych. Diagnostyka i naprawa urządzeń techniki komputerowej. Witryny i aplikacje internetowe. Cisco Courses</td></tr>\
+					<tr><th>Organizacja</th><td>Cosinus</td></tr>\
+						<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Data</th><td>09/2006 - 01/2012</td></tr>\
+					<tr><th>Kwalifikacja</th><td>Prawnik</td></tr>\
+					<tr><th>kierunek</th><td>Prawoznawstwo</td></tr>\
+					<tr><th>Organizacja</th><td>Kijowski międzynarodowy uniwersytet</td></tr>\
+				<tr><th id=\"t\">Umiejętności i kompetencje</th><td></td></tr>\
+					<tr><th>Języki</th><td>Ukrainski - ojczysty</td></tr>\
+						<tr><th></th><td>Rosyjski - ojczysty</td></tr>\
+						<tr><th></th><td>Angielski - biegły</td></tr>\
+						<tr><th></th><td>Polski - średni</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Komputerowe umiejętności i kompetencje</th><td>HTML / CSS / JavaScript<br>Photoshop, Bootstrap, Web Fonts, Cross-Browsing, CMS, GIT, Responsive UI of web pages<br>Windows/MacOS/Linux</td></tr>\
+							<tr><th  class=\"emptyCell\"></th><td></td></tr>\
+					<tr><th>Dodatkowe informacje</th><td>prawo jazdy kat. \"B\"</td></tr>\
+						<tr><th></th><td>Żonaty</td></tr>\
+						<tr><th></th><td>Dzieci</td></tr>\
+			</table>";
 
-					<tr><th id="h"></th><td></td></tr>
-
-			<tr><th>Дата</th><td>11/2006 - 09/2008</td></tr>
-
-			<tr><th>Позиція</th><td>Copywriter</td></tr>
-			
-			<tr><th>Обов'язки</th><td>Переведення текстів в електронний вигляд (Acrobat Reader). Редагування, правка текстів</td></tr>
-		
-		<tr><th id="t">Освіта і навчання</th><td></td></tr>
-
-			<tr><th>Дата</th><td>09/2018 - </td></tr>
-
-			<tr><th>Кваліфікація</th><td>Junior Full Stack developer</td></tr>
-			
-			<tr><th>Основні науки</th><td> jQuerry/Angular.js/React.js/Vue.js, LESS/SASS, Node.js/Express.js, Databases</td></tr>
-
-			<tr><th>Установа</th><td>W3School, SoloLearn, Enki, freeCodeCamp, Cisco</td></tr>
-
-				<tr><th id="h"></th><td></td></tr>
-
-			<tr><th>Дата</th><td>02/2018 - 02/2020</td></tr>
-
-			<tr><th>Кваліфікація</th><td>Інформатик</td></tr>
-			
-			<tr><th>Основні науки</th><td>Проектування та розбудова мереж. Проектування та розбудова комп'ютерних станцій. Операційні системи. Сайти та інтернет-аплікації. Курси Cisco </td></tr>
-
-			<tr><th>Установа</th><td>Cosinus</td></tr>
-
-				<tr><th id="h"></th><td></td></tr>
-
-			<tr><th>Дата</th><td>09/2006 - 01/2012</td></tr>
-
-			<tr><th>Кваліфікація</th><td>Юрист</td></tr>
-			
-			<tr><th>Основні науки</th><td>Правознавство</td></tr>
-
-			<tr><th>Установа</th><td>Київський міжнародний університет</td></tr>
-			
-		<tr><th id="t">Навички і вправність</th><td></td></tr>
-		
-			<tr><th>Володіння мовами</th><td>Українська - рідна</td></tr>
-				<tr><th></th><td>Російська - розмовна</td></tr>
-				<tr><th></th><td>Англійська - розмовна</td></tr>
-				<tr><th></th><td>Польська - середній</td></tr>
-
-					<tr><th id="h"></th><td></td></tr>
-
-			<tr><th>Комп'ютерні навички і вправність</th><td>HTML / CSS / JavaScript<br>Photoshop, Bootstrap, Web Fonts, Cross-Browsing, CMS, GIT, Responsive UI of web pages</td></tr>
-
-					<tr><th id="h"></th><td></td></tr>
-				
-			<tr><th>Додаткова інформація</th><td>Водійське посвідчення кат "B"</td></tr>
-				<tr><th></th><td>Одружений</td></tr>
-				<tr><th></th><td>Діти</td></tr>
-	</table>-->
-	<table id="table">
-		<tr><th id="t">About me</th><td></td></tr>
-		<tr><th>First name/Last Name</th><td id="f">Valerii Zinchenko</td></tr>
-			<tr><th>Address</th><td>Nowodworska str, Warsaw 03-133</td></tr>
-			<tr><th>telefone</th><td>+48 576-938-657</td></tr>
-			<tr><th>e-mail</th><td>Zinchenko.valeriy@icloud.com</td></tr>
-					<tr><th id="h"></th><td></td></tr>
-			<tr><th>Nationality</th><td>Ukraine</td></tr>
-			<tr><th>Date of Birth</th><td>31.07.1989</td></tr>
-					<tr><th id="h"></th><td></td></tr>
-			<tr><th>Вesired job position</th><td>Junior front-end developer</td></tr>
-			<tr><th>Portfolio</th><td><a href="https://zinchenkoipad.github.io">github.io</a></td></tr>
-		<tr><th id="t">Experience</th><td></td></tr>
-			<tr><th>Date</th><td>07/2013 - 03/2018</td></tr>
-			<tr><th>Position</th><td>Freelancer</td></tr>
-			<tr><th>Duties</th><td>RWD sites content and design development, Wordpress configuration, customizing CSS / JavaScript animations. Corporate design development</td></tr>
-					<tr><th id="h"></th><td></td></tr>
-			<tr><th>Date</th><td>09/2008 - 03/2015</td></tr>
-			<tr><th>Position</th><td>Attorney assistant</td></tr>
-			<tr><th>Duties</th><td>Documents, articles writing. Site administration</td></tr>
-					<tr><th id="h"></th><td></td></tr>
-			<tr><th>Date</th><td>11/2006 - 09/2008</td></tr>
-			<tr><th>Position</th><td>Copywriter</td></tr>
-			<tr><th>Duties</th><td>Text transcription in electronic form (Acrobat Reader). Texts editing and redaction</td></tr>
-			
-		<tr><th id="t">Education and training</th><td></td></tr>
-			<tr><th>Date</th><td>09/2018 - </td></tr>
-			<tr><th>Qualification</th><td>Junior Full Stack developer</td></tr>
-			<tr><th>Specialty</th><td> jQuerry/Angular.js/React.js/Vue.js, LESS/SASS, Node.jsExpress.js, Databases</td></tr>
-			<tr><th>Organization</th><td>W3School, SoloLearn, Enki, freeCodeCamp, Cisco</td></tr>
-				<tr><th id="h"></th><td></td></tr>
-			<tr><th>Date</th><td>02/2018 - 02/2020</td></tr>
-			<tr><th>Qualification</th><td>Computer specialis</td></tr>
-			<tr><th>Specialty</th><td>Networks project and development. Computer stations design development. Operating Systems. Internet applications. Cisco Courses</td></tr>
-			<tr><th>Organization</th><td>Cosinus</td></tr>
-				<tr><th id="h"></th><td></td></tr>
-			<tr><th>Date</th><td>09/2006 - 01/2012</td></tr>
-			<tr><th>Qualification</th><td>Lawyer</td></tr>
-			<tr><th>Specialty</th><td>Jurisprudence</td></tr>
-			<tr><th>Organization</th><td>Kyiv international university</td></tr>
-		<tr><th id="t">Skills and competence</th><td></td></tr>
-			<tr><th>Languages</th><td>Ukraine - native</td></tr>
-				<tr><th></th><td>Russian - native</td></tr>
-				<tr><th></th><td>English - speaking</td></tr>
-				<tr><th></th><td>Polish - medium</td></tr>
-					<tr><th id="h"></th><td></td></tr>
-			<tr><th>Computer skills and competence</th><td>HTML / CSS / JavaScript<br>Photoshop, Bootstrap, Web Fonts, Cross-Browsing, CMS, GIT, Responsive UI of web pages<br>Windows/MacOS/Linux</td></tr>
-					<tr><th id="h"></th><td></td></tr>
-			<tr><th>Additional Information</th><td>driver's license cat. "B"</td></tr>
-				<tr><th></th><td>Married</td></tr>
-				<tr><th></th><td>Children</td></tr>
-	</table>
-<section>
-<button onclick="en()" id="bEN">En</button>
-<button onclick="pl()" id="bPL">Pl</button>
-<button onclick="ua()" id="bUA">Ua</button>
-</section>
-<script type="text/javascript">
-	var UA ="<table id=\"table\">\
-		<tr><th id=\"t\">Мої дані</th><td></td></tr>\
-		<tr><th>Ім'я/Прізвище</th><td id=\"f\">Валерій Зінченко</td></tr>\
-			<tr><th>Адреса</th><td>вул. Новодворська, Варшава 03-133</td></tr>\
-			<tr><th>телефон</th><td>+48 576-938-657</td></tr>\
-			<tr><th>e-mail</th><td>Zinchenko.valeriy@icloud.com</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Громадянство</th><td>Україна</td></tr>\
-			<tr><th>Дата народження</th><td>31.07.1989</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Бажана позиція</th><td>Junior front-end developer</td></tr>\
-			<tr><th>Портфоліо</th><td><a href=\"https://zinchenkoipad.github.io\">github.io</a></td></tr>\
-		<tr><th id=\"t\">Досвід роботи</th><td></td></tr>\
-			<tr><th>Дата</th><td>07/2013 - 03/2018</td></tr>\
-			<tr><th>Позиція</th><td>Власна діяльність</td></tr>\
-			<tr><th>Обов'язки</th><td>Створення контенту та проектування сайтів RWD, конфігурація Wordpress, налаштування CSS / JavaScript анімації. Розробка корпоративного дизайну компаній </td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Дата</th><td>09/2008 - 03/2015</td></tr>\
-			<tr><th>Позиція</th><td>Помічник адвоката</td></tr>\
-			<tr><th>Обов'язки</th><td>Редагування, правка, написання документів, статей. Адміністрування сайтом</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Дата</th><td>11/2006 - 09/2008</td></tr>\
-			<tr><th>Позиція</th><td>Copywriter</td></tr>\
-			<tr><th>Обов\'язки</th><td>Переведення текстів в електронний вигляд (Acrobat Reader). Редагування, правка текстів</td></tr>\
-		<tr><th id=\"t\">Освіта і навчання</th><td></td></tr>\
-			<tr><th>Дата</th><td>09/2018 - </td></tr>\
-			<tr><th>Кваліфікація</th><td>Junior Full Stack developer</td></tr>\
-			<tr><th>Основні науки</th><td> jQuerry/Angular.js/React.js/Vue.js, LESS/SASS, Node.js/Express.js, Databases</td></tr>\
-			<tr><th>Установа</th><td>W3School, SoloLearn, Enki, freeCodeCamp, Cisco</td></tr>\
-				<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Дата</th><td>02/2018 - 02/2020</td></tr>\
-			<tr><th>Кваліфікація</th><td>Інформатик</td></tr>\
-			<tr><th>Основні науки</th><td>Проектування та розбудова мереж. Проектування та розбудова комп'ютерних станцій. Операційні системи. Сайти та інтернет-аплікації. Курси Cisco</td></tr>\
-			<tr><th>Установа</th><td>Cosinus</td></tr>\
-				<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Дата</th><td>09/2006 - 01/2012</td></tr>\
-			<tr><th>Кваліфікація</th><td>Юрист</td></tr>\
-			<tr><th>Основні науки</th><td>Правознавство</td></tr>\
-			<tr><th>Установа</th><td>Київський міжнародний університет</td></tr>\
-		<tr><th id=\"t\">Навички і вправність</th><td></td></tr>\
-			<tr><th>Володіння мовами</th><td>Українська - рідна</td></tr>\
-				<tr><th></th><td>Російська - розмовна</td></tr>\
-				<tr><th></th><td>Англійська - розмовна</td></tr>\
-				<tr><th></th><td>Польська - середній</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Комп'ютерні наввички і вправність</th><td>HTML / CSS / JavaScript<br>Photoshop, Bootstrap, Web Fonts, Cross-Browsing, CMS, GIT, Responsive UI of web pages</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Додаткова інформація</th><td>Водійське посвідчення кат \"B\"</td></tr>\
-				<tr><th></th><td>Одружений</td></tr>\
-				<tr><th></th><td>Діти</td></tr>\
-	</table>";
-	var EN="\
-	<table id=\"table\">\
-		<tr><th id=\"t\">About me</th><td></td></tr>\
-		<tr><th>First name/Last Name</th><td id=\"f\">Valerii Zinchenko</td></tr>\
-			<tr><th>Address</th><td>Nowodworska str, Warsaw 03-133</td></tr>\
-			<tr><th>telefone</th><td>+48 576-938-657</td></tr>\
-			<tr><th>e-mail</th><td>Zinchenko.valeriy@icloud.com</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Nationality</th><td>Ukraine</td></tr>\
-			<tr><th>Date of Birth</th><td>31.07.1989</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Вesired job position</th><td>Junior front-end developer</td></tr>\
-			<tr><th>Portfolio</th><td><a href=\"https://zinchenkoipad.github.io\">github.io</a></td></tr>\
-			\
-		<tr><th id=\"t\">Experience</th><td></td></tr>\
-			<tr><th>Date</th><td>07/2013 - 03/2018</td></tr>\
-			<tr><th>Position</th><td>Freelancer</td></tr>\
-			<tr><th>Duties</th><td>RWD sites content and design development, Wordpress configuration, customizing CSS / JavaScript animations. Corporate design development</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Date</th><td>09/2008 - 03/2015</td></tr>\
-			<tr><th>Position</th><td>Attorney assistant</td></tr>\
-			<tr><th>Duties</th><td>Documents, articles writing. Site administration</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Date</th><td>11/2006 - 09/2008</td></tr>\
-			<tr><th>Position</th><td>Copywriter</td></tr>\
-			<tr><th>Duties</th><td>Text transcription in electronic form (Acrobat Reader). Texts editing and redaction</td></tr>\
-		<tr><th id=\"t\">Education and training</th><td></td></tr>\
-			<tr><th>Date</th><td>09/2018 - </td></tr>\
-			<tr><th>Qualification</th><td>Junior Full Stack developer</td></tr>\
-			<tr><th>Specialty</th><td> jQuerry/Angular.js/React.js/Vue.js, LESS/SASS, Node.js/Express.js, Databases</td></tr>\
-			<tr><th>Organization</th><td>W3School, SoloLearn, Enki, freeCodeCamp, Cisco</td></tr>\
-				<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Date</th><td>02/2018 - 02/2020</td></tr>\
-			<tr><th>Qualification</th><td>Computer specialis</td></tr>\
-			<tr><th>Specialty</th><td>Networks project and development. Computer stations design development. Operating Systems. Internet applications. Cisco Courses</td></tr>\
-			<tr><th>Organization</th><td>Cosinus</td></tr>\
-				<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Date</th><td>09/2006 - 01/2012</td></tr>\
-			<tr><th>Qualification</th><td>Lawyer</td></tr>\
-			<tr><th>Specialty</th><td>Jurisprudence</td></tr>\
-			<tr><th>Organization</th><td>Kyiv international university</td></tr>\
-		<tr><th id=\"t\">Skills and competence</th><td></td></tr>\
-			<tr><th>Languages</th><td>Ukraine - native</td></tr>\
-				<tr><th></th><td>Russian - native</td></tr>\
-				<tr><th></th><td>English - speaking</td></tr>\
-				<tr><th></th><td>Polish - medium</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Computer skills and competence</th><td>HTML / CSS / JavaScript<br>Photoshop, Bootstrap, Web Fonts, Cross-Browsing, CMS, GIT, Responsive UI of web pages<br>Windows/MacOS/Linux</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Additional Information</th><td>driver's license cat. \"B\"</td></tr>\
-				<tr><th></th><td>Married</td></tr>\
-				<tr><th></th><td>Children</td></tr>\
-	</table>";
-	var PL="\
-	<table id=\"table\">\
-		<tr><th id=\"t\">O mnie</th><td></td></tr>\
-		<tr><th>Imię/Nazwisko</th><td id=\"f\">Valerii Zinchenko</td></tr>\
-			<tr><th>Adres</th><td>Nowodworska str, Warsaw 03-133</td></tr>\
-			<tr><th>telefon</th><td>+48 576-938-657</td></tr>\
-			<tr><th>e-mail</th><td>Zinchenko.valeriy@icloud.com</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Narodowość</th><td>Ukraina</td></tr>\
-			<tr><th>Data urodzenia</th><td>31.07.1989</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Pożądana pozycja pracy</th><td>Junior front-end developer</td></tr>\
-			<tr><th>Teczka</th><td><a href=\"https://zinchenkoipad.github.io\">github.io</a></td></tr>\
-		<tr><th id=\"t\">Doświadczenie zawodowe</th><td></td></tr>\
-			<tr><th>Data</th><td>07/2013 - 03/2018</td></tr>\
-			<tr><th>Stanowisko</th><td>Freelancer</td></tr>\
-			<tr><th>Obowiązki</th><td>Tworzenie i projektowanie stron internetowych RWD, konfiguracja Wordpressa, dostosowywanie animacji CSS / JavaScript. Corporate design development</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Data</th><td>09/2008 - 03/2015</td></tr>\
-			<tr><th>Stanowisko</th><td>Asystent prawnika</td></tr>\
-			<tr><th>Obowiązki</th><td>Dokumenty, artykuły do pisania. Administracja witryny</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Data</th><td>11/2006 - 09/2008</td></tr>\
-			<tr><th>Stanowisko</th><td>Copywriter</td></tr>\
-			<tr><th>Obowiązki</th><td>Transkrypcja tekstu w formie elektronicznej (Acrobat Reader). Edycja i redakcja tekstów</td></tr>\
-		<tr><th id=\"t\">Wykształcenie</th><td></td></tr>\
-			<tr><th>Data</th><td>09/2018 - </td></tr>\
-			<tr><th>Kwalifikacja</th><td>Junior Full Stack developer</td></tr>\
-			<tr><th>kierunek</th><td> jQuerry/Angular.js/React.js/Vue.js, LESS/SASS, Node.js/Express.js, Databases</td></tr>\
-			<tr><th>Organizacja</th><td>W3School, SoloLearn, Enki, freeCodeCamp, Cisco</td></tr>\
-				<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Data</th><td>02/2018 - 02/2020</td></tr>\
-			<tr><th>Kwalifikacja</th><td>Informatyk</td></tr>\
-			<tr><th>kierunek</th><td>Projektowanie i montaż lokalnych sieci komputerowych. Diagnostyka i naprawa urządzeń techniki komputerowej. Witryny i aplikacje internetowe. Cisco Courses</td></tr>\
-			<tr><th>Organizacja</th><td>Cosinus</td></tr>\
-				<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Data</th><td>09/2006 - 01/2012</td></tr>\
-			<tr><th>Kwalifikacja</th><td>Prawnik</td></tr>\
-			<tr><th>kierunek</th><td>Prawoznawstwo</td></tr>\
-			<tr><th>Organizacja</th><td>Kijowski międzynarodowy uniwersytet</td></tr>\
-		<tr><th id=\"t\">Umiejętności i kompetencje</th><td></td></tr>\
-			<tr><th>Języki</th><td>Ukrainski - ojczysty</td></tr>\
-				<tr><th></th><td>Rosyjski - ojczysty</td></tr>\
-				<tr><th></th><td>Angielski - biegły</td></tr>\
-				<tr><th></th><td>Polski - średni</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Komputerowe umiejętności i kompetencje</th><td>HTML / CSS / JavaScript<br>Photoshop, Bootstrap, Web Fonts, Cross-Browsing, CMS, GIT, Responsive UI of web pages<br>Windows/MacOS/Linux</td></tr>\
-					<tr><th id=\"h\"></th><td></td></tr>\
-			<tr><th>Dodatkowe informacje</th><td>prawo jazdy kat. \"B\"</td></tr>\
-				<tr><th></th><td>Żonaty</td></tr>\
-				<tr><th></th><td>Dzieci</td></tr>\
-	</table>";
-	function en(){
-		document.getElementById("table").innerHTML=EN;
-		document.getElementById("m").innerHTML="Valerii Zinchenko СV";
-		document.getElementById("bEN").style.top="10px";
-		document.getElementById("bEN").style.position="relative";
-		document.getElementById("bEN").style.fontWeight="bold";
-		document.getElementById("bEN").style.borderColor="red";
-		document.getElementById("bEN").style.borderRadius="3px";
-		document.getElementById("bUA").style.top="0px";
-		document.getElementById("bUA").style.position="none";
-		document.getElementById("bUA").style.fontWeight="normal";
-		document.getElementById("bUA").style.borderColor="rgba(0,0,0,0.3";
-		document.getElementById("bUA").style.borderRadius="3px";
-		document.getElementById("bPL").style.top="0px";
-		document.getElementById("bPL").style.position="none";
-		document.getElementById("bPL").style.fontWeight="normal";
-		document.getElementById("bPL").style.borderColor="rgba(0,0,0,0.3";
-		document.getElementById("bPL").style.borderRadius="3px";
-		}
-	function ua(){
-		document.getElementById("table").innerHTML=UA;
-		document.getElementById("m").innerHTML="Валерій Зінченко СV";
-		document.getElementById("bUA").style.top="10px";
-		document.getElementById("bUA").style.position="relative";
-		document.getElementById("bUA").style.fontWeight="bold";
-		document.getElementById("bUA").style.borderColor="red";
-		document.getElementById("bUA").style.borderRadius="3px";
-		document.getElementById("bEN").style.top="0px";
-		document.getElementById("bEN").style.position="none";
-		document.getElementById("bEN").style.fontWeight="normal";
-		document.getElementById("bEN").style.borderColor="rgba(0,0,0,0.3";
-		document.getElementById("bEN").style.borderRadius="3px";
-		document.getElementById("bPL").style.top="0px";
-		document.getElementById("bPL").style.position="none";
-		document.getElementById("bPL").style.fontWeight="normal";
-		document.getElementById("bPL").style.borderColor="rgba(0,0,0,0.3";
-		document.getElementById("bPL").style.borderRadius="3px";
-	}
-	function pl(){
-		document.getElementById("table").innerHTML=PL;
-		document.getElementById("m").innerHTML="Valerii Zinchenko СV";
-		document.getElementById("bPL").style.top="10px";
-		document.getElementById("bPL").style.position="relative";
-		document.getElementById("bPL").style.fontWeight="bold";
-		document.getElementById("bPL").style.borderColor="red";
-		document.getElementById("bPL").style.borderRadius="3px";
-		document.getElementById("bUA").style.top="0px";
-		document.getElementById("bUA").style.position="none";
-		document.getElementById("bUA").style.fontWeight="normal";
-		document.getElementById("bUA").style.borderColor="rgba(0,0,0,0.3";
-		document.getElementById("bUA").style.borderRadius="3px";
-		document.getElementById("bEN").style.top="0px";
-		document.getElementById("bEN").style.position="none";
-		document.getElementById("bEN").style.fontWeight="normal";
-		document.getElementById("bEN").style.borderColor="rgba(0,0,0,0.3";
-		document.getElementById("bEN").style.borderRadius="3px";
-	}
-</script>
+			function changeLang(lang,name){
+				$('#table').remove();
+				$('#content').after(lang);
+				$('#name').html(name);
+				$('button').removeClass('selected')
+				$(event.target).addClass('selected');
+				}
+			$( function(){
+				$('#content').after(EN);
+				$('button:nth-of-type(1)').addClass('selected');
+			})
+		</script>
+	</div>
 </body>
 </html>
